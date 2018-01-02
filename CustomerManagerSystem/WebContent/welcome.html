@@ -4,11 +4,43 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <meta http-equiv="refresh" content="3;url=login.jsp" >
+<script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+<script type="text/javascript">  
+    $(function() {  
+        var wait = $(".second").html();  
+        timeOut();  
+        /**  
+         * 实现倒计时  
+         */  
+        function timeOut() {  
+            if(wait != 0) {  
+                setTimeout(function() {  
+                    $('.second').text(--wait);  
+                    timeOut();  
+                }, 1000);  
+            }  
+        }  
+    });  
+</script> 
 </head>
-<body>
-<div align="center">
+ <body class="body-404"> 
+        <div class="container" align="center">  
+            <!-- BEGIN MAIN CONTENT -->  
+            <section class="error-wrapper">  
+                <h3>提示内容</h3>  
+                <p class="page-404">  
+                    <span>页面自动</span>  
+                    <a href="login.jsp">跳转</a>  
+                    <span>等待时间：</span>  
+                    <span class="second">3</span>  
+                </p>  
+            </section>  
+            <!-- END MAIN CONTENT -->  
+        </div> 
+    </body> 
+     
+<!-- <div align="center">
   <h2><font color="black">欢迎使用客户信息管理系统</font> </h2>
   <font color="red">3秒后将进入登录界面.........</font>
-</div>
-</body>
+</div> -->
 </html>
